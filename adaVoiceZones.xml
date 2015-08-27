@@ -1,0 +1,37 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleAdaVoiceZones" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleAdaVoiceZones" scope="public">
+    <example>SARAH éteint la lampe</example>
+    <tag>out.action=new Object(); </tag>
+    <item >Sarah</item>
+    
+    <one-of>
+      <item>étin<tag>out.action.mode="off"; out.action.off="true"; out.action._attributes.tts = "Jéteint'";</tag></item>
+      <item>allume<tag>out.action.mode="off"; out.action.off="false"; out.action._attributes.tts = "Jallume";</tag></item>
+      <item>mode couleur<tag>out.action.mode="color"; out.action._attributes.tts = "Je change le couleur";</tag></item>
+    </one-of>
+   <item repeat="0-1">
+      <one-of>
+        <item>la lampe<tag>out.action.index="3";out.action._attributes.tts = "la lampe";</tag></item>
+        <item>la TV<tag>out.action.index="0";out.action._attributes.tts = "lambilight";</tag></item>
+        <item>l'ambilight<tag>out.action.index="0";out.action._attributes.tts = "lambilight";</tag></item>
+        <item>les caissons<tag>out.action.index="1_2";out.action._attributes.tts = "les caissons";</tag></item>
+        <item>le caisson droit<tag>out.action.index="1";out.action._attributes.tts = "le caisson droit";</tag></item>
+        <item>le caisson gauche<tag>out.action.index="2";out.action._attributes.tts = "le caisson gauche";</tag></item>
+        <item>tout<tag>out.action.index="0_1_2_3";out.action._attributes.tts = "tout";</tag></item>
+        <item>la lampe droite<tag>out.action.index="1";out.action._attributes.tts = "la lampe droite";</tag></item>
+        <item>la lampe gauche<tag>out.action.index="2";out.action._attributes.tts = "la lampe gauche";</tag></item>
+      </one-of>
+    </item>
+   <item repeat="0-1">
+      <one-of>
+        <item>rouge<tag>out.action.color="red";out.action._attributes.tts = "en rouge";</tag></item>
+        <item>bleu<tag>out.action.color="blue";out.action._attributes.tts = "en bleu";</tag></item>
+        <item>vert<tag>out.action.color="green";out.action._attributes.tts = "en vert";</tag></item>
+        <item>jaune<tag>out.action.color="yellow";out.action._attributes.tts = "en jaune";</tag></item>
+        <item>turquoise<tag>out.action.color="cyan";out.action._attributes.tts = "en turquoise";</tag></item>
+        <item>fuschia<tag>out.action.color="magenta";out.action._attributes.tts = "en fuchia";</tag></item>
+      </one-of>
+    </item>
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/adaVoiceZones";</tag>
+  </rule> 
+</grammar>

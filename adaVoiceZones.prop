@@ -1,0 +1,28 @@
+{
+    "modules"             : { 
+    "adaVoiceZones"       : {
+    "description"         : "Gestion multi (zones et cartes) pour protocole Adalight.",
+    "version"             : "0.0.1",
+    "keywords": [
+      "adalight",
+      "arduino",
+      "multizones",
+      "hyperion"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/caolan/async.git"
+    },
+    "bugs": {
+      "url": "https://github.com/caolan/async/issues"
+    },
+    "license"             :"MIT",
+    "dependencies"        :{
+      "color"             :"0.10.1",
+      "async"             :"1.4.2",
+      "serialport"        :"1.7.4",
+      "adaZones"          :"0.0.1"
+    }
+    }
+  }
+}

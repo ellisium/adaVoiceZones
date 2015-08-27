@@ -1,0 +1,41 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Users\\xbmc\\Documents\\sarah\\server\\NodeJS\\\\node.exe',
+1 verbose cli   'C:\\Users\\xbmc\\Documents\\sarah\\server\\NodeJS\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish',
+1 verbose cli   './' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.30
+4 verbose node symlink C:\Users\xbmc\Documents\sarah\server\NodeJS\\node.exe
+5 verbose publish [ './' ]
+6 verbose cache add [ './', null ]
+7 verbose cache add name=undefined spec="./" args=["./",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: './',
+8 verbose parsed url   path: './',
+8 verbose parsed url   href: './' }
+9 silly lockFile 0ee6c175- ./
+10 verbose lock ./ C:\Users\xbmc\AppData\Roaming\npm-cache\0ee6c175-.lock
+11 silly lockFile 0ee6c175- ./
+12 silly lockFile 0ee6c175- ./
+13 error addLocal Could not install ./
+14 error Error: ENOENT, open 'C:\Users\xbmc\Documents\GitHub\adaVoiceZones\package.json'
+15 error If you need help, you may report this *entire* log,
+15 error including the npm and node versions, at:
+15 error     <http://github.com/npm/npm/issues>
+16 error System Windows_NT 6.1.7601
+17 error command "C:\\Users\\xbmc\\Documents\\sarah\\server\\NodeJS\\\\node.exe" "C:\\Users\\xbmc\\Documents\\sarah\\server\\NodeJS\\node_modules\\npm\\bin\\npm-cli.js" "publish" "./"
+18 error cwd C:\Users\xbmc\Documents\GitHub\adaVoiceZones
+19 error node -v v0.10.30
+20 error npm -v 1.4.21
+21 error path C:\Users\xbmc\Documents\GitHub\adaVoiceZones\package.json
+22 error code ENOENT
+23 error errno 34
+24 verbose exit [ 34, true ]
