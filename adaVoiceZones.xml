@@ -7,7 +7,8 @@
     <one-of>
       <item>étin<tag>out.action.mode="off"; out.action.off="true"; out.action._attributes.tts = "Jéteint'";</tag></item>
       <item>allume<tag>out.action.mode="off"; out.action.off="false"; out.action._attributes.tts = "Jallume";</tag></item>
-      <item>mode couleur<tag>out.action.mode="color"; out.action._attributes.tts = "Je change le couleur";</tag></item>
+      <item>mode Couleur<tag>out.action.mode="color"; out.action._attributes.tts = "Je change le couleur";</tag></item>
+      <item>ambiance<tag>out.action.mode="color"; out.action._attributes.tts = "Je change le couleur";</tag></item>
     </one-of>
    <item repeat="0-1">
       <one-of>
@@ -24,6 +25,7 @@
     </item>
    <item repeat="0-1">
       <one-of>
+        <item>blanc<tag>out.action.color="white";out.action._attributes.tts = "en blanc";</tag></item>
         <item>rouge<tag>out.action.color="red";out.action._attributes.tts = "en rouge";</tag></item>
         <item>bleu<tag>out.action.color="blue";out.action._attributes.tts = "en bleu";</tag></item>
         <item>vert<tag>out.action.color="green";out.action._attributes.tts = "en vert";</tag></item>
@@ -31,6 +33,20 @@
         <item>turquoise<tag>out.action.color="cyan";out.action._attributes.tts = "en turquoise";</tag></item>
         <item>fuschia<tag>out.action.color="magenta";out.action._attributes.tts = "en fuchia";</tag></item>
       </one-of>
+    </item>
+    <item repeat="0-1">
+    <one-of>
+      <item>à 10%<tag>out.action.lvl=10;</tag></item>
+      <item>à 20%<tag>out.action.lvl=20;</tag></item>
+      <item>à 30%<tag>out.action.lvl=30;</tag></item>
+      <item>à 40%<tag>out.action.lvl=40;</tag></item>
+      <item>à 50%<tag>out.action.lvl=50;</tag></item>
+      <item>à 60%<tag>out.action.lvl=60;</tag></item>
+      <item>à 70%<tag>out.action.lvl=70;</tag></item>
+      <item>à 80%<tag>out.action.lvl=80;</tag></item>
+      <item>à 90%<tag>out.action.lvl=90;</tag></item>
+      <item>à 100%<tag>out.action.lvl=100;</tag></item>
+    </one-of>
     </item>
     <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/adaVoiceZones";</tag>
   </rule> 

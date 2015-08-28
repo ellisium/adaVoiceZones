@@ -2,7 +2,13 @@ var adaZones=require('adazones');
 adaZones.init('ambilight')
 
 exports.action = function(params, next){ 
-  var index= params.index.split('_');
+  if(params.hasOwnProperty('index')){
+	var index= params.index.split('_');
+  }else{
+  	var index=undefined;
+  	for(var i=0; i < adaZones.zones.length; i++)index++;
+  }
+
   switch(params.mode){
   	case 'off':
   		var verb=null;
@@ -17,7 +23,11 @@ exports.action = function(params, next){
   	break;
   	case 'color':
 		for(var i=0; i<index.length; i++){
-			adaZones.setColor(parseInt(index[i]), params.color);
+			if(params.hasOwnProperty('lvl')){
+				adaZones.setColor(parseInt(index[i]), params.color, parseInt(params.lvl));
+			}else{
+				adaZones.setColor(parseInt(index[i]), params.color);
+			}
   		}
   	break;
   }
