@@ -11,10 +11,10 @@
     ],
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/caolan/async.git"
+      "url": "git+https://github.com/ellisium/adaVoiceZones.git"
     },
     "bugs": {
-      "url": "https://github.com/caolan/async/issues"
+      "url": "https://github.com/ellisium/adaVoiceZones/issues"
     },
     "license"             :"MIT",
     "dependencies"        :{
