@@ -1,6 +1,5 @@
 <grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleAdaVoiceZones" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
   <rule id="ruleAdaVoiceZones" scope="public">
-    <example>SARAH éteint la lampe</example>
     <tag>out.action=new Object(); </tag>
     <item >Sarah</item>
     <one-of>

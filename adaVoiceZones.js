@@ -1,12 +1,29 @@
-var adaZones=require(__dirname+'\\node_modules\\adazones\\adaZones.js');
-//adaZones.init('ambilight')
+var spawn=require('child_process').spawn,
+settings= require(__dirname+'\\settings.json'),
+io = require('socket.io-client'),
+serverUrl = 'http://localhost:'+settings.port+'/adaZones',
+zones=null,
+client=null;
+
+setTimeout(function(){
+  try{
+    client = io.connect(serverUrl);
+    client.on('zones', function(data) {
+      zones=data;
+      console.log('server sent zones settings');
+    });
+  }catch(e){
+    console.log(e)
+  }
+},2000);
 
 exports.action = function(params, next){
+
   if(params.hasOwnProperty('index')){
 	var index= params.index.split('_');
   }else{
   	var index=[];
-  	for(var i=0; i < adaZones.zones.length; i++){
+  	for(var i=0; i < zones.length; i++){
   		index.push(i);
   	}
   }
@@ -20,7 +37,10 @@ exports.action = function(params, next){
         verb='setPassthruOn';
       }
       for(var i=0; i<index.length; i++){
-        adaZones[verb](parseInt(index[i]));
+        var cmd={cmd:verb, args:[parseInt(index[i])]}
+        client.emit('cmd', cmd, function(resp, data) {
+            console.log('server sent resp code ' + resp + 'for zone'+i);
+        });
       }
     break;
   	case 'off':
@@ -31,17 +51,23 @@ exports.action = function(params, next){
   			verb='turnOn';
   		}
   		for(var i=0; i<index.length; i++){
-			 adaZones[verb](parseInt(index[i]));
+			 var cmd={cmd:verb, args:[parseInt(index[i])]}
+        client.emit('cmd', cmd, function(resp, data) {
+            console.log('server sent resp code ' + resp+ 'for zone'+i);
+        });
   		}
   	break;
   	case 'color':
 		for(var i=0; i<index.length; i++){
-			if(params.hasOwnProperty('lvl')){
-				adaZones.setColor(parseInt(index[i]), params.color, parseInt(params.lvl));
-			}else{
-				adaZones.setColor(parseInt(index[i]), params.color);
-			}
-  		}
+  			if(params.hasOwnProperty('lvl')){
+          var cmd={cmd:'setColor', args:[parseInt(index[i]), params.color, parseInt(params.lvl)]};
+  			}else{
+  				var cmd={cmd:'setColor', args:[parseInt(index[i]), params.color]};
+  			}
+        client.emit('cmd', cmd, function(resp, data) {
+          console.log('server sent resp code ' + resp+ 'for zone'+i);
+        });
+  	}
   	break;
   }
   next();
