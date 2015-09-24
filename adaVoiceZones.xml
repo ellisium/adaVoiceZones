@@ -5,6 +5,8 @@
     <one-of>
       <item>active ambilight<tag>out.action.mode="pass"; out.action.off="false"; out.action._attributes.tts = "ambilight cinéma'";</tag></item>
       <item>désactive ambilight<tag>out.action.mode="pass"; out.action.off="true"; out.action._attributes.tts = "ambilight cinéma'";</tag></item>
+      <item>active ambilight écran<tag>out.action.mode="hyperionScreen"; out.action.off="false"; out.action._attributes.tts = "j'active l'ambilight cinéma'";</tag></item>
+      <item>désactive ambilight écran<tag>out.action.mode="hyperionScreen"; out.action.off="true"; out.action._attributes.tts = "je désactive l'ambilight cinéma'";</tag></item>
       <item>étin<tag>out.action.mode="off"; out.action.off="true"; out.action._attributes.tts = "Jéteint'";</tag></item>
       <item>allume<tag>out.action.mode="off"; out.action.off="false"; out.action._attributes.tts = "Jallume";</tag></item>
       <item>mode Couleur<tag>out.action.mode="color"; out.action._attributes.tts = "Je change le couleur";</tag></item>

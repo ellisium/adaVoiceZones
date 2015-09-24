@@ -1,6 +1,7 @@
 {
 
-	"port": 6665,
+	"adaZonesPort": 6665,
+	"hyperionScreenPort":6664,
 	"zone":"ambilight"
 
 }
