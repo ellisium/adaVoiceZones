@@ -2,7 +2,7 @@ var spawn=require('child_process').spawn,
 settings= require(__dirname+'\\settings.json'),
 io = require('socket.io-client'),
 adaZonesServerUrl = 'http://localhost:'+settings.adaZonesPort+'/adaZones',
-hyperionScreenServerUrl = 'http://localhost:'+settings.hyperionScreenPort+'/adaZones',
+hyperionScreenServerUrl = 'http://localhost:'+settings.hyperionScreenPort+'/hyperionScreen',
 zones=null,
 client=null;
 
