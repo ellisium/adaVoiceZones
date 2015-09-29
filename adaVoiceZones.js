@@ -46,7 +46,7 @@ exports.action = function(params, next){
       }
       var cmd={cmd:'ffmpegOff', args:[]}
       hyperionClient.emit('hyperionCmd', cmd, function(resp, data) {
-        console.log('server sent resp code ' + resp);
+        console.log('server sent setPassthru resp code ' + resp);
       });
     break;
     case 'hyperionScreen':
@@ -66,7 +66,7 @@ exports.action = function(params, next){
       }
       var cmd={cmd:verbHyperion, args:[]}
       hyperionClient.emit('hyperionCmd', cmd, function(resp, data) {
-        console.log('server sent resp code ' + resp);
+        console.log('server sent resp hyperionScreen code ' + resp);
       });
     break;
     case 'off':
@@ -79,7 +79,7 @@ exports.action = function(params, next){
       for(var i=0; i<index.length; i++){
        var cmd={cmd:verb, args:[parseInt(index[i])]}
         adaZonesClient.emit('cmd', cmd, function(resp, data) {
-            console.log('server sent resp code ' + resp+ 'for zone'+i);
+            console.log('server sent off resp code ' + resp+ 'for zone'+i);
         });
       }
     break;
@@ -91,7 +91,15 @@ exports.action = function(params, next){
           var cmd={cmd:'setColor', args:[parseInt(index[i]), params.color]};
         }
         adaZonesClient.emit('cmd', cmd, function(resp, data) {
-          console.log('server sent resp code ' + resp+ 'for zone'+i);
+          console.log('server sent color resp code ' + resp+ 'for zone'+i);
+        });
+    }
+    break;
+    case 'negate':
+    for(var i=0; i<index.length; i++){
+        var cmd={cmd:'negateColor', args:[parseInt(index[i])]};
+        adaZonesClient.emit('cmd', cmd, function(resp, data) {
+          console.log('server sent negate resp code ' + resp+ 'for zone'+i);
         });
     }
     break;
