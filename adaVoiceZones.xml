@@ -11,6 +11,7 @@
       <item>allume<tag>out.action.mode="off"; out.action.off="false"; out.action._attributes.tts = "Jallume";</tag></item>
       <item>mode Couleur<tag>out.action.mode="color"; out.action._attributes.tts = "Je change le couleur";</tag></item>
       <item>ambiance<tag>out.action.mode="color"; out.action._attributes.tts = "Je change le couleur";</tag></item>
+      <item>inverse la couleur<tag>out.action.mode="negate"; out.action._attributes.tts = "J'inverse' le couleur";</tag></item>
     </one-of>
    <item repeat="0-1">
       <one-of>
